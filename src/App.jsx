@@ -18,17 +18,20 @@ function App() {
   // Step 4: User list
   const users = ['Alice', 'Bob', 'Charlie'];
 
+  const isLoggedIn = false;
   return (
     <div>
       <h1>React ES6 Lab</h1>
 
       <h2>User List</h2>
       <UserList users={users} />
-
       <h2>Counter</h2>
       <Counter />
+      {/* Conditional Rendering using a ternary operator */}
+            {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
     </div>
   );
+    
 }
 
 export default App;

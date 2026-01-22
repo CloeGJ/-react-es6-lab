@@ -2,42 +2,27 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import UserList from './UserList';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Step 3: ES6+ examples
+  const names = ['Alice', 'Bob', 'Charlie'];
+  const doubled = names.map(name => name.length * 2);
+  console.log('Doubled lengths:', doubled);
+
+  const person = { name: 'Alice', age: 25 };
+  const { name, age } = person;
+  console.log('Destructured:', name, age);
+
+  // Step 4: React component with props
+  const users = ['Alice', 'Bob', 'Charlie'];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1>React ES6 Lab</h1>
+      <UserList users={users} />
+    </div>
+  );
 }
 
-const names = ['Alice','Bob','Charlie'];
-const doubled = names.map(name => name.length * 2);
-console.log('Doubled lengths:', doubled);
-
-const person = { name: 'Alice', age: 25 };
-const { name, age } = person;
-console.log('Destructured:', name, age);
-
-export default App
+export default App;
